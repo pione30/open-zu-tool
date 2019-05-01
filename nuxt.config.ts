@@ -1,5 +1,4 @@
 import NuxtConfiguration from '@nuxt/config'
-import webpack from 'webpack'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import pkg from './package.json'
 
@@ -47,6 +46,16 @@ const config: NuxtConfiguration = {
      ** You can extend webpack config here
      */
     extend(config, ctx): void {
+      if (!config.module) return
+      config.module.rules.push({
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
+        }
+      })
+
       config.resolve = {
         plugins: [
           new TsconfigPathsPlugin({
