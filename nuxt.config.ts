@@ -1,6 +1,7 @@
+import NuxtConfiguration from '@nuxt/config'
 import pkg from './package'
 
-export default {
+const config: NuxtConfiguration = {
   mode: 'universal',
 
   /*
@@ -52,3 +53,5 @@ export default {
     }
   }
 }
+
+export default config
