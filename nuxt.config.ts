@@ -1,5 +1,5 @@
 import NuxtConfiguration from '@nuxt/config'
-import pkg from './package'
+import pkg from './package.json'
 
 const config: NuxtConfiguration = {
   mode: 'universal',
