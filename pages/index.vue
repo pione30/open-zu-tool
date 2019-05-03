@@ -10,15 +10,29 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import axios from 'axios'
 import ZuToolChart from '~/components/ZuToolChart.vue'
 
-@Component({
+export default {
   components: {
     ZuToolChart
+  },
+  data() {
+    return {
+      forecastData: {}
+    }
+  },
+  async asyncData() {
+    const response = await axios.get('https://api.openweathermap.org/data/2.5/forecast', {
+      params: {
+        id: process.env.OPEN_WEATHER_MAP_CITY_ID,
+        appid: process.env.OPEN_WEATHER_MAP_API_KEY
+      }
+    })
+
+    return { forecastData: response.data }
   }
-})
-export default class Index extends Vue {}
+}
 </script>
 
 <style>
