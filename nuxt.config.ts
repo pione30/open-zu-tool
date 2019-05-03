@@ -1,5 +1,4 @@
 import NuxtConfiguration from '@nuxt/config'
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import pkg from './package.json'
 
 const config: NuxtConfiguration = {
@@ -55,14 +54,6 @@ const config: NuxtConfiguration = {
           appendTsSuffixTo: [/\.vue$/]
         }
       })
-
-      config.resolve = {
-        plugins: [
-          new TsconfigPathsPlugin({
-            configFile: './tsconfig.json'
-          })
-        ]
-      }
     }
   }
 }
