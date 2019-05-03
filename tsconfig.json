@@ -15,17 +15,16 @@
     "importHelpers": true,
     "target": "es6",
     "moduleResolution": "node",
-    "types": [
-      "@nuxt/vue-app",
-      "@types/node"
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@nuxt/vue-app/types"
     ],
     "lib": [
       "dom",
       "es2018"
     ]
   },
-  "include": [
-    "./pages/**/*",
-    "./components/**/*"
+  "exclude": [
+    "node_modules"
   ]
 }
