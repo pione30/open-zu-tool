@@ -4,7 +4,7 @@
       <h1 class="title">
         open-zu-tool
       </h1>
-      <zu-tool-chart />
+      <zu-tool-chart :forecast-data="forecastData" />
     </div>
   </section>
 </template>
