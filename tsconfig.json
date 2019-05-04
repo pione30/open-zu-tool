@@ -8,6 +8,7 @@
     },
     "sourceMap": true,
     "strict": true,
+    "noImplicitAny": false,
     "noImplicitReturns": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
