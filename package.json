@@ -4,10 +4,14 @@
   "description": "open-zu-tool",
   "author": "pione30",
   "private": true,
+  "engines": {
+    "node": "10.15.3"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
+    "heroku-postbuild": "npm run build",
     "generate": "nuxt generate",
     "test": "jest"
   },
