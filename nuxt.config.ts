@@ -35,7 +35,7 @@ const config: NuxtConfiguration = {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/dotenv'],
 
   /*
    ** Build configuration
