@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <canvas id="zuToolChart" width="1000" height="500"></canvas>
+  <div class="chart-container">
+    <canvas id="zuToolChart"></canvas>
   </div>
 </template>
 
@@ -37,6 +37,7 @@ export default class ZuToolChart extends Vue {
         ]
       },
       options: {
+        responsive: true,
         scales: {
           yAxes: [
             {
@@ -61,3 +62,11 @@ export default class ZuToolChart extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.chart-container {
+  position: relative;
+  height: 40vh;
+  width: 80vw;
+}
+</style>
