@@ -10,11 +10,9 @@
 </template>
 
 <script lang="ts">
-import ZuToolChart from '~/components/ZuToolChart.vue'
-
 export default {
   components: {
-    ZuToolChart
+    ZuToolChart: () => import('~/components/ZuToolChart.vue')
   },
   data() {
     return {
