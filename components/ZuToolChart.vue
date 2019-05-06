@@ -67,7 +67,7 @@ export default class ZuToolChart extends Vue {
 <style scoped>
 .chart-container {
   position: relative;
-  height: 40vh;
-  width: 80vw;
+  height: 85vh;
+  width: 90vw;
 }
 </style>
