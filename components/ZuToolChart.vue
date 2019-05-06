@@ -1,18 +1,19 @@
 <template>
   <div class="chart-container">
-    <canvas id="zuToolChart"></canvas>
+    <canvas id="zuToolChart">
+      <p>Loading...</p>
+    </canvas>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Prop } from 'vue-property-decorator'
-import Chart from 'chart.js'
 
 @Component
 export default class ZuToolChart extends Vue {
   @Prop({ required: true }) forecastData!: any
 
-  mounted() {
+  async mounted() {
     const ctx = 'zuToolChart'
 
     const labels: string[] = this.forecastData.list.map(element => {
@@ -22,6 +23,8 @@ export default class ZuToolChart extends Vue {
     })
 
     const data: number[] = this.forecastData.list.map(element => element.main.pressure)
+
+    const { default: Chart } = await import(/* webpackChunkName: 'chart' */ 'chart.js')
 
     new Chart(ctx, {
       type: 'line',
@@ -48,7 +51,6 @@ export default class ZuToolChart extends Vue {
               }
             }
           ],
-
           xAxes: [
             {
               scaleLabel: {
