@@ -10,12 +10,9 @@
 </template>
 
 <script lang="ts">
-import axios from 'axios'
-import ZuToolChart from '~/components/ZuToolChart.vue'
-
 export default {
   components: {
-    ZuToolChart
+    ZuToolChart: () => import('~/components/ZuToolChart.vue')
   },
   data() {
     return {
@@ -23,6 +20,7 @@ export default {
     }
   },
   async asyncData() {
+    const { default: axios } = await import(/* webpackChunkName: 'axios' */ 'axios')
     const response = await axios.get('https://api.openweathermap.org/data/2.5/forecast', {
       params: {
         id: process.env.OPEN_WEATHER_MAP_CITY_ID,
