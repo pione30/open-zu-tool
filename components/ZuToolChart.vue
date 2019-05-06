@@ -38,6 +38,7 @@ export default class ZuToolChart extends Vue {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           yAxes: [
             {
